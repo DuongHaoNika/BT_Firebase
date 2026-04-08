@@ -64,14 +64,19 @@ public class MainActivity extends AppCompatActivity {
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     movieList.clear();
+
                     for (var doc : queryDocumentSnapshots.getDocuments()) {
                         Movie movie = doc.toObject(Movie.class);
-                        if (movie != null) movieList.add(movie);
+                        if (movie != null) {
+                            movieList.add(movie);
+                        }
                     }
+
+                    Toast.makeText(this, "Đọc được " + movieList.size() + " phim", Toast.LENGTH_SHORT).show();
                     adapter.notifyDataSetChanged();
                 })
                 .addOnFailureListener(e ->
-                        Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show());
+                        Toast.makeText(this, "Lỗi movies: " + e.getMessage(), Toast.LENGTH_LONG).show());
     }
 
     private void updateFcmToken() {
