@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Firebaseapp">
         <activity
+            android:name=".ui.MyTicketsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MovieDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="false">
             <intent-filter>
@@ -20,10 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MyTicketsActivity" />
-        <activity android:name=".ui.MovieDetailActivity" />
-        <activity android:name=".ui.MainActivity" />
-        <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.LoginActivity" />
 
         <service
